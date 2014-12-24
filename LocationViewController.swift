@@ -51,6 +51,11 @@ class LocationViewController: UIViewController {
         self.findLocation(enterDestinationLocationTextField.text, user: false)
     }
     
+    @IBAction func shouldIBikeTodayButtonPressed(sender: AnyObject) {
+        if userLat != nil && destLat != nil {
+            performSegueWithIdentifier("locationToResultsSegue", sender: self)
+        }
+    }
     
     func findLocation(text:String, user:Bool) {
         
@@ -121,7 +126,14 @@ class LocationViewController: UIViewController {
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //none
+        if segue.identifier == "locationToResultsSegue" {
+            let resultVC: ResultViewController = segue.destinationViewController as ResultViewController
+            resultVC.userLat = self.userLat
+            resultVC.userLng = self.userLng
+            resultVC.destLat = self.destLat
+            resultVC.destLng = self.destLng
+            
+        }
     }
     
 

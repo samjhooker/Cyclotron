@@ -122,19 +122,13 @@
                                         <state key="normal" title="Button" image="Bike Today? button">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="shouldIBikeTodayButtonPressed:" destination="NZP-fG-cxL" eventType="touchUpInside" id="YvO-Fg-068"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.49698153410000001" green="0.49698153410000001" blue="0.49698153410000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RwG-zR-DbG">
-                                <rect key="frame" x="299" y="559" width="46" height="30"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Q2d-pC-Qzd" kind="show" id="AQ9-5x-oGK"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vaq-Cj-6HR">
                                 <rect key="frame" x="16" y="389" width="336" height="53"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -282,7 +276,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="qxA-JR-1c5"/>
-        <segue reference="alB-0Y-iih"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>
