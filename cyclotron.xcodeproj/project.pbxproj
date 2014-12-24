@@ -39,9 +39,9 @@
 		7E4CEE321A4A5E0B007C4607 /* cyclotronTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cyclotronTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E4CEE371A4A5E0B007C4607 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E4CEE381A4A5E0B007C4607 /* cyclotronTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cyclotronTests.swift; sourceTree = "<group>"; };
-		7E54FC2C1A4A5EC40057A651 /* BeginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeginViewController.swift; sourceTree = "<group>"; };
-		7E54FC2E1A4A5EE20057A651 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
-		7E54FC301A4A5EF10057A651 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		7E54FC2C1A4A5EC40057A651 /* BeginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeginViewController.swift; path = ../BeginViewController.swift; sourceTree = "<group>"; };
+		7E54FC2E1A4A5EE20057A651 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationViewController.swift; path = ../LocationViewController.swift; sourceTree = "<group>"; };
+		7E54FC301A4A5EF10057A651 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultViewController.swift; path = ../ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,9 +65,6 @@
 		7E4CEE111A4A5E0B007C4607 = {
 			isa = PBXGroup;
 			children = (
-				7E54FC2C1A4A5EC40057A651 /* BeginViewController.swift */,
-				7E54FC2E1A4A5EE20057A651 /* LocationViewController.swift */,
-				7E54FC301A4A5EF10057A651 /* ResultViewController.swift */,
 				7E4CEE1C1A4A5E0B007C4607 /* cyclotron */,
 				7E4CEE351A4A5E0B007C4607 /* cyclotronTests */,
 				7E4CEE1B1A4A5E0B007C4607 /* Products */,
@@ -87,6 +84,9 @@
 			isa = PBXGroup;
 			children = (
 				7E4CEE1F1A4A5E0B007C4607 /* AppDelegate.swift */,
+				7E54FC2C1A4A5EC40057A651 /* BeginViewController.swift */,
+				7E54FC2E1A4A5EE20057A651 /* LocationViewController.swift */,
+				7E54FC301A4A5EF10057A651 /* ResultViewController.swift */,
 				7E4CEE261A4A5E0B007C4607 /* Main.storyboard */,
 				7E4CEE291A4A5E0B007C4607 /* Images.xcassets */,
 				7E4CEE2B1A4A5E0B007C4607 /* LaunchScreen.xib */,

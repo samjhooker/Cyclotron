@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>12EB3511-B1A7-42FE-8265-3FD3CFEE7510</string>
+	<key>IDESourceControlProjectName</key>
+	<string>cyclotron</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F173F2F583223F61DE1FE8E176BD78897A9E881E</key>
+		<string>https://github.com/samjhooker/Cyclotron.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>cyclotron.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F173F2F583223F61DE1FE8E176BD78897A9E881E</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/samjhooker/Cyclotron.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F173F2F583223F61DE1FE8E176BD78897A9E881E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F173F2F583223F61DE1FE8E176BD78897A9E881E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>cyclotron</string>
+		</dict>
+	</array>
+</dict>
+</plist>

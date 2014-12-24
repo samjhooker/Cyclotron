@@ -7,13 +7,27 @@
 //
 
 import UIKit
+import Darwin
 
 class ResultViewController: UIViewController {
-
+    
+    let userLat:Double!
+    let userLng:Double!
+    let destLat:Double!
+    let destLng:Double!
+    
+    var angle:Double!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        var angle = calculateAngle(userLat, x2: destLat, y1: userLng, y2: destLng)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,14 +36,11 @@ class ResultViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func calculateAngle(x1:Double, x2:Double, y1:Double, y2:Double) -> Double {
+        let dy = y2-y1
+        let dx = x2-x1
+        
+        return (atan(dy / dx) * 180 / 3.14159)
     }
-    */
 
 }

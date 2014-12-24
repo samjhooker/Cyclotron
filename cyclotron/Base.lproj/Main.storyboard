@@ -91,18 +91,24 @@
                                         <state key="normal" title="Button" image="search button">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="userLocationSearchButtonPressed:" destination="NZP-fG-cxL" eventType="touchUpInside" id="bE9-Pz-U7b"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fz-dq-xbs">
                                         <rect key="frame" x="204" y="56" width="124" height="40"/>
                                         <state key="normal" title="Button" image="detect button">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="detectLocationButtonPressed:" destination="NZP-fG-cxL" eventType="touchUpInside" id="L3j-kD-FxG"/>
+                                        </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Enter an address above and hit search. Alternativly you can tap detect for auto detection. " selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDF-vz-BIl">
                                         <rect key="frame" x="8" y="8" width="188" height="88"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
@@ -160,12 +166,22 @@
                                         <state key="normal" title="Button" image="search button">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="destinationLocationButtonPressed:" destination="NZP-fG-cxL" eventType="touchUpInside" id="MaG-Bk-ay6"/>
+                                        </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Enter an address above and hit search. " selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WzZ-Sr-8UC">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WzZ-Sr-8UC">
                                         <rect key="frame" x="8" y="8" width="188" height="88"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Enter an address above and hit search. ">
+                                                <attributes>
+                                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
@@ -176,6 +192,13 @@
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="UserLocationTextView" destination="sDF-vz-BIl" id="W4O-ky-fG0"/>
+                        <outlet property="destinationLocationTextView" destination="WzZ-Sr-8UC" id="8lB-TZ-RTh"/>
+                        <outlet property="enterDestinationLocationTextField" destination="u1A-e5-4bZ" id="veu-hJ-pYS"/>
+                        <outlet property="enterUserLocationTextField" destination="WnQ-lU-cOg" id="Mzg-hl-abM"/>
+                        <segue destination="Q2d-pC-Qzd" kind="show" identifier="locationToResultsSegue" id="alB-0Y-iih"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ku8-2z-ITx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -258,7 +281,8 @@
         <image name="search button" width="235" height="73"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6ZX-J8-SET"/>
+        <segue reference="qxA-JR-1c5"/>
+        <segue reference="alB-0Y-iih"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>
