@@ -233,6 +233,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Q2d-pC-Qzd" id="rc7-p1-Z5N"/>
+                                    <outlet property="delegate" destination="Q2d-pC-Qzd" id="q8o-4y-K6g"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="cyclotron" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SFo-dE-6ac">
                                 <rect key="frame" x="152" y="27" width="71" height="21"/>
@@ -257,6 +261,9 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="tableView" destination="tOL-Ho-FuQ" id="116-9q-tVV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J5A-bi-2Xi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -275,7 +282,7 @@
         <image name="search button" width="235" height="73"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qxA-JR-1c5"/>
+        <segue reference="6ZX-J8-SET"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

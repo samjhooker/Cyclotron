@@ -9,7 +9,7 @@
 import UIKit
 import Darwin
 
-class ResultViewController: UIViewController {
+class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var userLat:Double!
     var userLng:Double!
@@ -23,6 +23,7 @@ class ResultViewController: UIViewController {
     var windAngle: Double!
     var precipProbability: Double!
     
+    @IBOutlet weak var tableView: UITableView!
     
     let kWeatherKey = "63c415668a5740c1e3487ba030f52492"
     
@@ -111,6 +112,9 @@ class ResultViewController: UIViewController {
         // 20 for wind
         // 10 for traffic
         
+        var temperature = calculateTemperature()
+        var wind = calculateWind()
+        println("Temperature: \(temperature), wind: \(wind)")
         
         
     }
@@ -140,5 +144,73 @@ class ResultViewController: UIViewController {
         return score
         
     }
+    
+    func differentInAngle(a:Double, b:Double) -> Double{
+        if a != b{
+            var big = max(a, b)
+            var small = min(a, b)
+            
+            var difference = big-small
+            if difference > 180{
+                difference = 360 - difference
+                return difference
+            }else{
+                return difference
+            }
+            
+        }else{
+            return 0.0
+        }
+    }
+    
+    func calculateWind() -> Int{
+        
+        if windSpeed < 5.0{
+            n2k.append("Very little wind")
+            return 20
+        }else if windSpeed < 20{
+            
+            var angle = differentInAngle(windSpeed, b: windAngle)
+            if angle < 40.0 {
+                n2k.append("Slight back wind")
+                return 20
+            }else if angle < 140{
+                n2k.append("slight head wind")
+                return 5
+            }else{
+                n2k.append("slightly windy")
+                return 12
+            }
+        }else if windSpeed > 20 {
+            var angle = differentInAngle(windSpeed, b: windAngle)
+            if angle < 40.0 {
+                n2k.append("Strong back wind")
+                return 20
+            }else if angle < 140{
+                n2k.append("Strong head wind")
+                return 0
+            }else{
+                n2k.append("Strong wind")
+                return 8
+            }
+            
+        }
+        return 10
+        
+    }
+    
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        //nul
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return n2k.count
+    }
+    
+    
+    
+    
+    
 
 }
