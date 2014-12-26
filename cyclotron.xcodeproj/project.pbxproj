@@ -16,6 +16,7 @@
 		7E54FC2D1A4A5EC40057A651 /* BeginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E54FC2C1A4A5EC40057A651 /* BeginViewController.swift */; };
 		7E54FC2F1A4A5EE20057A651 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E54FC2E1A4A5EE20057A651 /* LocationViewController.swift */; };
 		7E54FC311A4A5EF10057A651 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E54FC301A4A5EF10057A651 /* ResultViewController.swift */; };
+		7E54FC351A4D0F120057A651 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E54FC341A4D0F120057A651 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		7E54FC2C1A4A5EC40057A651 /* BeginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeginViewController.swift; path = ../BeginViewController.swift; sourceTree = "<group>"; };
 		7E54FC2E1A4A5EE20057A651 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationViewController.swift; path = ../LocationViewController.swift; sourceTree = "<group>"; };
 		7E54FC301A4A5EF10057A651 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultViewController.swift; path = ../ResultViewController.swift; sourceTree = "<group>"; };
+		7E54FC341A4D0F120057A651 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewCell.swift; path = ../TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				7E54FC2C1A4A5EC40057A651 /* BeginViewController.swift */,
 				7E54FC2E1A4A5EE20057A651 /* LocationViewController.swift */,
 				7E54FC301A4A5EF10057A651 /* ResultViewController.swift */,
+				7E54FC341A4D0F120057A651 /* TableViewCell.swift */,
 				7E4CEE261A4A5E0B007C4607 /* Main.storyboard */,
 				7E4CEE291A4A5E0B007C4607 /* Images.xcassets */,
 				7E4CEE2B1A4A5E0B007C4607 /* LaunchScreen.xib */,
@@ -224,6 +227,7 @@
 				7E54FC311A4A5EF10057A651 /* ResultViewController.swift in Sources */,
 				7E54FC2D1A4A5EC40057A651 /* BeginViewController.swift in Sources */,
 				7E4CEE201A4A5E0B007C4607 /* AppDelegate.swift in Sources */,
+				7E54FC351A4D0F120057A651 /* TableViewCell.swift in Sources */,
 				7E4CEE231A4A5E0B007C4607 /* cyclotron.xcdatamodeld in Sources */,
 				7E54FC2F1A4A5EE20057A651 /* LocationViewController.swift in Sources */,
 			);

@@ -31,6 +31,9 @@ class LocationViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "5boro2012_0157")!)
+        
     }
 
     override func didReceiveMemoryWarning() {

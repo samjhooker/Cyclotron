@@ -106,16 +106,18 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func calculateDay(){
         
-        //out of 50
+        //out of 60
         // 10 for temperature
         // 10 for rain
         // 20 for wind
         // 10 for traffic
+        // 10 for disatnce
         
         var temperature = calculateTemperature()
         var wind = calculateWind()
         println("Temperature: \(temperature), wind: \(wind)")
-        
+        var distance = calculateDistance()
+        self.tableView.reloadData()
         
     }
     
@@ -139,7 +141,13 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 message = "today is too hot"
                 score = 0
             }
+        
         }
+        
+        if (temperature > 54) && (temperature < 71) {
+            message = " temperature is perfect"
+        }
+        
         n2k.append(message)
         return score
         
@@ -201,13 +209,44 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        //nul
+        var cell: TableViewCell = tableView.dequeueReusableCellWithIdentifier("myCell") as TableViewCell
+        cell.label.text = n2k[indexPath.row]
+        return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return n2k.count
     }
     
+    func calculateDistance() -> Int{
+        //returns int 0-10
+        
+        var distance = sqrt(((destLat - userLat) * (destLat - userLat)) + ((destLng - userLng) * (destLng - userLng))) * 111.2
+        println("distance: \(distance)")
+        
+        var subtraction = Int(distance/2)
+        if subtraction > 10 {
+            subtraction = 10
+        }
+        
+        if distance < 5.0 {
+            n2k.append("easy cycling distance")
+        } else if distance < 10.0{
+            n2k.append("Trip isnt too long")
+        }else if distance < 20.0 {
+            n2k.append("Trip is pretty far, you can do it")
+        }else if distance < 30.0 {
+            n2k.append("Trip is far but I believe in you")
+        }else if distance < 1000.0{
+            n2k.append("Its a long trip, progress with caution")
+        }else{
+            n2k.append("Thats really far, I dont believe you")
+        }
+        
+        
+        
+        return 10 - subtraction
+    }
     
     
     
