@@ -25,6 +25,9 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var scoreImage: UIImageView!
+    
+    
     let kWeatherKey = "63c415668a5740c1e3487ba030f52492"
     
     var n2k:[String] = []
@@ -115,10 +118,22 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         var temperature = calculateTemperature()
         var wind = calculateWind()
-        println("Temperature: \(temperature), wind: \(wind)")
-        var distance = calculateDistance()
-        self.tableView.reloadData()
         
+        var distance = calculateDistance()
+        var traffic = calculateTraffic()
+        var rain = calculateRain()
+        
+        var score = Int((temperature + wind + distance + traffic + rain) / 6 )
+        
+        self.tableView.reloadData()
+        println("Temperature: \(temperature), wind: \(wind), traffic \(traffic), rain \(rain), distance\(distance), overallScore \(score)")
+        
+        self.animateScore(score)
+        
+       // var image = "\(score)" + "score"
+       // self.scoreImage.image = UIImage(named: image)
+        
+
     }
     
     
@@ -222,7 +237,6 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
         //returns int 0-10
         
         var distance = sqrt(((destLat - userLat) * (destLat - userLat)) + ((destLng - userLng) * (destLng - userLng))) * 111.2
-        println("distance: \(distance)")
         
         var subtraction = Int(distance/2)
         if subtraction > 10 {
@@ -246,6 +260,67 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         
         return 10 - subtraction
+    }
+    
+    func calculateTraffic() -> Int {
+        let date = NSDate()
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components(.CalendarUnitHour | .CalendarUnitMinute, fromDate: date)
+        let hour = components.hour
+        
+        if (hour >= 7) || (hour <= 6) {
+            n2k.append("It is dark, Make sure you have lights")
+        }
+        
+        if hour == 7 || hour == 10 || hour == 17 || hour == 19{
+            n2k.append("Traffic is pretty buzy")
+            return 5
+        }
+        else if hour == 9 || hour == 18 {
+            n2k.append("It is rush hour, Stay safe")
+            return 0
+        }else{
+            n2k.append("Traffic should be safe at the moment")
+            return 10
+        }
+        
+    }
+    
+    func calculateRain() -> Int {
+        
+        if precipProbability < 0.3 {
+            n2k.append("Little chance of rain")
+        } else if (precipProbability < 0.65){
+            n2k.append("Likley rain and sad cycling")
+            
+        }else{
+            n2k.append("It will be wet and raining")
+        }
+        
+        return (10 - (Int(precipProbability*10)))
+        
+        
+        
+    }
+    
+    func animateScore(score:Int){
+        // var image = "\(score)" + "score"
+        // self.scoreImage.image = UIImage(named: image)
+        
+        var image = "\(score)" + "score"
+        
+        
+        let transition = CATransition()
+        transition.type = kCATransitionFade
+        self.scoreImage.layer.addAnimation(transition, forKey: kCATransition)
+        
+        self.scoreImage.image = UIImage(named: image)
+            
+            
+        
+        
+        
+        
     }
     
     
